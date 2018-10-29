@@ -1,6 +1,6 @@
-# Server
+# API Server
 
-In this repository, you will use build a simple server using Node/Express.
+In this repository, you will use build a simple API server using Node/Express.
 
 ## Objectives
 

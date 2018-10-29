@@ -1,6 +1,13 @@
 {
-  "name": "server",
+  "name": "API",
   "version": "1.0.0",
   "author": "Krista Moroder for Codely",
-  "license": "Proprietary"
+  "license": "Proprietary",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
 }

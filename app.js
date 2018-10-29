@@ -1,6 +1,7 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const data = require('./data/pokemon.js');
 
 app.use(bodyParser.json());
 app.use(function(req, res, next) {
@@ -11,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/', function (req, res) {
-  res.send('Hello World');
+  res.send("Hello world!");
 });
 
 app.listen(3000);

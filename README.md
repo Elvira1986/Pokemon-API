@@ -43,7 +43,6 @@ Run `yarn start` to run the development server.
 - [ ] `PUT` `/pokemon/{id}` should update a pokemon by ID (you will need to provide the full data object).
   - To test this: after running your query in Postman, get that pokemon by ID and ensure that it changed.
   - 200: OK
-  - 204: No Content (update info not provided)
   - 404: Not found (resource does not exist)
 - [ ] `DELETE` `/pokemon/{id}` should delete a pokemon by ID.
   - To test this: after running your query in Postman, try to get that pokemon by ID.

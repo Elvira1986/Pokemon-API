@@ -23,7 +23,7 @@ app.get("/pokemon/:id", function(req, res) {
   for (let i = 0; i < data.length; i++) {
     console.log(data[i]);
     if (parseInt(data[i].id) === parseInt(req.params.id)) {
-      res.send(data[i]);
+      return res.send(data[i]);
     }
   }
   res.status(404).send("Pokemon does not exist");

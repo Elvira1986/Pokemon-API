@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const data = require("./data/pokemon.js");
 
+app.use(express.json());
+
 app.use(function(req, res, next) {
   res.type("json");
   res.set({

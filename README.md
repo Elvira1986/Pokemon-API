@@ -9,8 +9,8 @@ In this repository, you will use build a simple API server using Node/Express.
 
 ## Setup
 
-Run `yarn` to install packages.
-Run `yarn start` to run the development server.
+Run `npm install` to install packages.
+Run `npm start` to run the development server.
 
 ## Basic Requirements
 

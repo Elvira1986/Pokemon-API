@@ -1,6 +1,6 @@
 # API Server
 
-In this repository, you will use build a simple API server using Node/Express.
+With this repository you will build a simple API server using Node/Express.
 
 ## Objectives
 
@@ -21,7 +21,7 @@ Run `npm start` to run the development server.
 
 ### 2. Use Postman to test the current queries.
 
-- [ ] After starting your server, check `GET` and `localhost:3000/` for data.
+- [ ] After starting your server, check `GET /` on `localhost:5000`.
 
 ### 3. Build additional queries.
 
@@ -36,16 +36,15 @@ Run `npm start` to run the development server.
   - To test this: run your query in Postman.
   - 200: OK
   - 404: Not found (resource does not exist)
-- [ ] `POST` `/pokemon` should add a new pokemon (you will need to provide the full data object).
-  - To test this: after running your query in Postman, get that pokemon by ID.
+- [ ] `POST` `/pokemon` should add a new pokemon (you will need to provide a full data object without an ID).
+  - To test this: does the server response contain the new Pokemon?
   - 201: Created
-  - 409: Conflict (resource exists)
-- [ ] `PUT` `/pokemon/{id}` should update a pokemon by ID (you will need to provide the full data object).
-  - To test this: after running your query in Postman, get that pokemon by ID and ensure that it changed.
+- [ ] `PUT` `/pokemon/{id}` should update a pokemon by ID (you will need to provide the full data object with its ID).
+  - To test this: has the Pokemon in the server response been updated?
   - 200: OK
   - 404: Not found (resource does not exist)
 - [ ] `DELETE` `/pokemon/{id}` should delete a pokemon by ID.
-  - To test this: after running your query in Postman, try to get that pokemon by ID.
+  - To test this: the deleted Pokemon should not be in the server response.
   - 200: OK
   - 404: Not found (resource does not exist)
 

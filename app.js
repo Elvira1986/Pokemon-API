@@ -1,42 +1,63 @@
 const express = require("express");
-const app = express();
 const data = require("./data/pokemon.js");
 
+const app = express();
 app.use(express.json());
 
-app.use(function(req, res, next) {
-  res.type("json");
-  res.set({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE"
-  });
 
-  next();
-});
+// Initialize variable to give each new Pokemon a unique ID
+let nextPokemonId = data.length + 1;
 
-app.get("/pokemon", function(req, res) {
-  res.send(data);
-});
-
-app.get("/pokemon/:id", function(req, res) {
-  const pokemon = data.find(e => +e.id === +req.params.id);
-
-  if (!pokemon) {
-    return res.status(404).send("Pokemon does not exist");
-  }
-
-  res.send(pokemon);
-});
-
-app.post("/pokemon", function(req, res) {
-  console.log(req.body);
-  data.push(req.body);
-  res.send(data);
-});
 
 app.get("/", function(req, res) {
-  res.send("Hello world");
+  res.send({ message: "Hello! Try /pokemon" });
 });
 
-app.listen(3000);
-console.log("Listening on port 3000...");
+// GET all Pokemons
+app.get("/pokemon", function(req, res) {
+  // Return all Pokemons
+  res.send(data);
+});
+
+// GET Pokemon by ID
+app.get("/pokemon/:id", function(req, res) {
+  // Find Pokemon with requested ID
+  const pokemon = data.find(p => p.id === Number(req.params.id));
+
+  if (pokemon) {
+    // Pokemon was found; return it
+    res.send(pokemon);
+  } else {
+    // Pokemon was not found; return 404 error
+    res.status(404).send({ error: "Pokemon does not exist" });
+  }
+});
+
+// Get attacks by Pokemon ID
+app.get("/pokemon/:id/attacks", function(req, res) {
+});
+
+// POST Pokemon
+app.post("/pokemon", function(req, res) {
+  // Create new Pokemon obj with req.body
+  // Add unique ID to obj, then increment unique ID variable
+  // Add new Pokemon obj to data array
+  // Return array of all Pokemons
+});
+
+// PUT Pokemon by ID
+app.put("/pokemon/:id", function(req, res) {
+  // Find the index of the Pokemon with the requested ID
+  // If the Pokemon was found
+    // Replace it with req.body in the array 
+    // Return updated array
+  // Else
+    // Return 404 error
+});
+
+// DELETE Pokemon by ID
+app.delete("/pokemon/:id", function(req, res) {
+});
+
+app.listen(5000);
+console.log("Listening on port 5000...");

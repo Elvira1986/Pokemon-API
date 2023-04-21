@@ -50,7 +50,7 @@ Run `npm start` to run the development server.
 
 ## Resources
 
-- [Express documentation](https://expressjs.com/en/api.html)
+- [Express documentation](https://expressjs.com/en/guide/routing.html)
 
 ## Notes
 

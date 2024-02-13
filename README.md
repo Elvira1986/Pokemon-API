@@ -21,7 +21,7 @@ Run `npm start` to run the development server.
 
 ### 2. Use Postman to test the current queries.
 
-- [ ] After starting your server, check `GET /` on `localhost:5000`.
+- [ ] After starting your server, check `GET /` on `localhost:4000`.
 
 ### 3. Build additional queries.
 

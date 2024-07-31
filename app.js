@@ -35,7 +35,7 @@ app.get("/pokemon/:id", function (req, res) {
 app.get("/pokemon/:id/attacks", function (req, res) {
   const pokemon = data.find((p) => p.id === Number(req.params.id));
   if (pokemon) {
-    // Pokemon was found; return it
+    // Pokemon was found and return it
     res.send(pokemon.attacks);
   } else {
     // Pokemon's attacks was not found; return 404 error
@@ -47,7 +47,7 @@ app.get("/pokemon/:id/attacks", function (req, res) {
 app.post("/pokemon", function (req, res) {
   // Create new Pokemon obj with req.body
   let newPokemon = req.body;
-  // Add unique ID to obj, then increment unique ID variable
+  // Add unique ID to Pokemons's obj, then increment unique ID variable
   newPokemon.id = nextPokemonId++;
   // Add new Pokemon obj to data array
   data.push(newPokemon);
@@ -61,26 +61,25 @@ app.put("/pokemon/:id", function (req, res) {
   let id = Number(req.params.id);
   let ix = data.findIndex((c) => c.id === id);
   // If the Pokemon was found
-  // Replace it with req.body in the array
-  // Return updated array
+  // Replace it with req.body in the array and update it
   if (ix === -1) {
-    // Cat not found; return 404 status code
+    //Pokemon not found; return 404 status code
     res.status(404).send({ error: "Pokemon is not found" });
   } else {
-    // Create new cat obj from request body
+    // Create new Pokemons obj from request body
     let modifiedPokemon = req.body;
-    // Make sure modified cat doesn't try to change ID
+    // Make sure modified pokemon doesn't try to change ID
     modifiedPokemon.id = id;
-    // Replace old cat with modified one
+    // Replace old Pokemons with modified one
     data[ix] = modifiedPokemon;
-    // Return all cats
+    // Return all Pokemons
     res.send(data);
   }
 });
 
 // DELETE Pokemon by ID
 app.delete("/pokemon/:id", function (req, res) {
-  // Get cat ID from URL parameter
+  // Get Pokemons ID from URL parameter
   let ix = data.findIndex((c) => c.id === Number(req.params.id));
   if (ix === -1) {
     // Return status code 404 if not found
